@@ -1,12 +1,17 @@
- var pan = document.getElementById('loadingScreen')
-var circle = document.getElementById('loadedScreen')
+  var pan = document.getElementById('loadingScreen')
+var loaded = document.getElementById('loadedScreen')
 
-setTimeout(() =>{
+/* setTimeout(() =>{
     pan.classList.add('none')
   
 }, 3000)
 
 setTimeout(() =>{
-    circle.classList.remove('none')
-}, 3000) 
+    loaded.classList.remove('none')
+}, 3000)    */
  
+window.addEventListener('load', function(){
+    pan.style.display ='none'
+    loaded.classList.remove('none')
+})
+
