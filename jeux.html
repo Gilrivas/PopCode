@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PopCode</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body class="dragscroll">
+    <div id="loadingScreen">
+        <img class='pan'src="assets/img/panW.png" alt="">
+        <h1>COOKING YOUR GAME</h1>
+            <i class="fa-brands fa-js"></i>
+            <i class="fa-brands fa-php"></i>
+            <i class="fa-brands fa-html5"></i>
+            <i class="fa-brands fa-laravel"></i>
+            <i class="fa-brands fa-java"></i>
+            <i class="fa-brands fa-symfony"></i>
+            <i class="fa-brands fa-python"></i>
+    </div>
+
+    
+    <section id="game" class="none">
+
+        <input id="input" class= 'input opacity' type="text" maxlength="10">
+
+
+        <div class="score">
+            <div class="scoreNum"><p id="score">00 </p><p>/ 30</p></div>
+            <div id="equis">
+                <div class="x" id="x1">
+                    <i class="fa-solid fa-x"></i>
+                </div>
+                <div class="x"  id=" x-2">
+                    <i class="fa-solid fa-x"></i>
+                </div>
+                <div class="x" id="x-3">
+                    <i class="fa-solid fa-x"></i>
+                </div>
+            </div>
+        </div>
+        <div class="minilogo"></div>
+
+      
+        <img id="zoom" src="assets/img/chambe.svg" alt="">
+      
+     
+    </section>
+
+    <footer>
+        <div class="rightFooter">
+            <div class="zooming">
+                <h2>zoom</h2>
+                <div class="zoomline">
+                    <p id="plus">+</p>
+                    <div class="line"></div>
+                    <p id="moin">-</p>
+                </div>
+            </div>
+            <div class="langagesT">
+                <img src="assets/img/loupe.svg" alt="">
+                <h2>Langages Trouvés</h2>
+            </div>
+        </div>
+        <div class="footerLinks">
+            <a href="mentionlegales.html">Mentions légales</a>
+            <a href="politique.html">Politique de confidentialité</a>
+        </div>
+    </footer>
+
+   <script src="assets/js/main.js"></script>
+    <script src="assets/js/wheelzoom.js"></script>
+    <script src="assets/js/loader2.js"></script>
+
+    
+</body>
+</html>

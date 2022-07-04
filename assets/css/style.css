@@ -20,6 +20,9 @@ body{
     background: black;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+   
+
 }
 *{
     box-sizing: border-box;
@@ -134,34 +137,181 @@ h1{
     line-height: 40px;
     font-family: 'Gotham', sans-serif;
 }
-.clickIci{
+#clickIci > a{
     font-family: "GothamLight" ,sans-serif;
     color: var(--mainRose);
     letter-spacing: 5px;
     font-size: 10px;
     cursor: pointer;
     user-select: none;
+ text-decoration: none;
 }
 
+.minilogo{
+    background-image: url(../img/minilogo.svg);
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    position: fixed;
+    right: 0;
+    top: 20px;
+}
+#game{
+    min-height: 100vh;
+}
 
+.score{
+    position: fixed;
+    color: white;
+    font-family: 'Gotham';
+    left:50px;
+    top: 25px;
+}
 
+.scoreNum{
+    display: flex;
+}
 
+.score::before{
+    position: absolute;
+    content: 'SCORE';
+    color: var(--mainBlue);
+    left: -45px;
+    border-bottom: 1px solid white;
+    top: 30px;
+    transform: rotate(270deg);
+}
+
+#zoom{
+   width: 100vw;
+   height: 100vh;
+   user-select: none;
+}
+
+#equis{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#equis > .x{
+    margin: 0px 3px;
+    
+}
+
+#x-1{
+    color: rgba(255, 255, 255, 0.3)
+}
 footer{
     display: flex;
     position: fixed;
+    width: 100%;
     font-size:16px;
-    bottom: 10px;
-    right: 40px;
+    bottom: 0px;
+    align-items: flex-end;
+    justify-content: space-between;
     font-family: 'Gotham', sans-serif;
 }
 
-footer > a{
+.rightFooter{
+    color: white;
+    display: flex;
+    margin: 20px;
+    align-items: flex-end;
+}
+.zooming{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.zooming > h2{
+    transform: rotate(-90deg);
+    color: var(--mainBlue);
+    font-size: 12px;
+    text-transform: uppercase;
+    user-select: none;
+    font-family: 'GothamLight';
+}
+.zoomline{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.line{
+    height: 100px;
+    background-color: white;
+    width: 2px;
+}
+.langagesT{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 5px;
+    margin: 0px 0px 20px 30px;
+    font-family: 'GothamLight';
+    font-size: 8px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    border: 1px solid white;
+    cursor: pointer;
+    user-select: none;
+}
+
+#plus{
+    user-select: none;
+    cursor: pointer;
+}
+#moin{
+    user-select: none;
+    cursor: pointer;
+}
+
+.langagesT > img{
+    margin: 0px 10px 0px 0px;
+}
+
+.footerLinks{
+    height: 100%;
+    align-items: flex-end;
+    justify-content: end;
+    margin:40px;
+}
+.footerLinks > a{
     color: white;
     text-decoration: none;
     margin: 10px;
     text-decoration: underline;
     text-underline-offset: 5px;
 }
+
+.opacity{
+    opacity: 0% ;
+    z-index: -1;
+}
+.input{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.589);
+    width: 100%;
+    height: 100%;
+    font-family: 'GothamLight';
+    font-size: 60px;
+    border: none;
+    user-select: none;
+    text-align: center;
+    color: white;
+   cursor: default;
+}
+
+.input:focus{
+    outline: none;
+
+}
+
+
 
 @keyframes vibration {
     
