@@ -270,6 +270,10 @@ footer{
     cursor: pointer;
 }
 
+.color{
+    color: var(--mainBlue);
+}
+
 .langagesT > img{
     margin: 0px 10px 0px 0px;
 }
@@ -300,7 +304,7 @@ footer{
     font-family: 'GothamLight';
     font-size: 60px;
     border: none;
-    user-select: none;
+
     text-align: center;
     color: white;
    cursor: default;
@@ -342,3 +346,4 @@ footer{
         color: black;
       }
 }
+
