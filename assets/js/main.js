@@ -1,8 +1,6 @@
 let input = document.getElementById('input')
-let x = document.querySelectorAll('.x')
-let score = document.getElementById('score')
 
-console.log(x.length);
+
 
 let langages = ['JavaScript',
     'Html' ,
@@ -12,11 +10,10 @@ let langages = ['JavaScript',
     'Java',
     'C#',
     'Php',
-    
     'C++',
     'TypeScript',]
 
-    
+
 window.addEventListener('keydown', function(event){
     
     key = event.key 
@@ -27,51 +24,6 @@ window.addEventListener('keydown', function(event){
     }
    
 })
-
-input.addEventListener("keyup", function(event){
-    
-    if(event.key === "Enter"){
-        if(langages.includes(input.value) === false){
-            
-            x[0].classList.add('color') 
-           
-          
-    }
-    }
-})
-
-input.addEventListener("keyup", function(event){
-    
-    if(event.key === "Enter"){
-       if(x[0].classList.contains('color') === true){
-            
-            x[1].classList.add('color') 
-            
-    
-           
-          
-    }
-    }
-})
-
-
-function gameAnswer2(){
-        if(langages.includes(input.value) === false && event.key === 'Enter'){
-            
-            x[1].classList.add('color') 
-            
-    }
-}
-function gameAnswer3(){
-        if(langages.includes(input.value) === false){
-            
-            x[1].classList.add('color') 
-           
-    }
-}
-
-
-
 
 
 input.addEventListener("keyup", function(event){
@@ -97,3 +49,47 @@ input.addEventListener("keyup", function(event){
     }
     
 })
+
+/* XXX */
+
+let wAnswer = 0
+let badAnwers = []
+let x = document.querySelectorAll('.x')
+
+
+
+/* find answers */
+let score = document.getElementById('score')
+let goodAnswers = []
+
+console.log(x[0]);
+input.addEventListener("keydown", function(event){
+    
+    if(event.key === "Enter"){  
+        if(langages.includes(input.value)){
+            res = input.value
+            goodAnswers.push(res)
+            console.log(goodAnswers);
+           
+        }else{
+           
+            res = input.value
+            badAnwers.push(res)
+            
+            for(let i = 0; i < badAnwers.length; i++){
+                x[i].style = 'color: var(--mainBlue);'
+              
+            }
+           
+        }
+    }
+    
+    for(let i = 0; i < goodAnswers.length; i++){
+        score.innerHTML = '0'+goodAnswers.length
+    }
+})
+
+
+
+
+
