@@ -37,6 +37,7 @@ body{
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
+    z-index: 5555;
 }
 
 span{
@@ -137,6 +138,9 @@ h1{
     line-height: 40px;
     font-family: 'Gotham', sans-serif;
 }
+#clickIci{
+    z-index: 20;
+}
 #clickIci > a{
     font-family: "GothamLight" ,sans-serif;
     color: var(--mainRose);
@@ -202,18 +206,11 @@ h1{
 #x-1{
     color: rgba(255, 255, 255, 0.3)
 }
-footer{
-    display: flex;
-    position: fixed;
-    width: 100%;
-    font-size:16px;
-    bottom: 0px;
-    align-items: flex-end;
-    justify-content: space-between;
-    font-family: 'Gotham', sans-serif;
-}
 
 .rightFooter{
+    position: fixed;
+    left: 0;
+    bottom: 0;
     color: white;
     display: flex;
     margin: 20px;
@@ -241,7 +238,7 @@ footer{
 }
 
 .line{
-    height: 100px;
+    height: 200px;
     background-color: white;
     width: 2px;
 }
@@ -256,6 +253,10 @@ footer{
     font-size: 8px;
     letter-spacing: 4px;
     text-transform: uppercase;
+    position: fixed;
+    color: white;
+    bottom: 20px;
+    left: 60px;
     border: 1px solid white;
     cursor: pointer;
     user-select: none;
@@ -264,10 +265,12 @@ footer{
 #plus{
     user-select: none;
     cursor: pointer;
+    font-size: 20px;
 }
 #moin{
     user-select: none;
     cursor: pointer;
+    font-size: 20px;
 }
 
 .color{
@@ -279,13 +282,16 @@ footer{
 }
 
 .footerLinks{
-    height: 100%;
+    position: fixed;
+    right: 0;
+    bottom: 0;
     align-items: flex-end;
     justify-content: end;
     margin:40px;
 }
 .footerLinks > a{
     color: white;
+    font-family: 'Gotham', sans-serif;
     text-decoration: none;
     margin: 10px;
     text-decoration: underline;
@@ -317,6 +323,93 @@ footer{
 
 
 
+#modal{
+    display: flex;
+    position: fixed;
+    height: 100%;
+    width: 50%;
+    align-items: flex-start;
+    justify-content: start;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.178);
+    backdrop-filter: blur(5px);
+    z-index: 55;
+}
+#closeModal{
+    position: absolute;
+    font-size: 40px;
+    top: 10px;
+    color: var(--mainRose);
+    cursor: pointer;
+    right: 20px;
+}
+#langagesTrouve{
+    font-family: 'Gotham';
+    font-size: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-transform: lowercase;
+    cursor: pointer;
+    user-select: none;
+}
+#langagesTrouve > p{
+    margin: 30px 0px;
+    text-transform: lowercase;
+    cursor: pointer;
+    user-select: none;
+    
+}
+#langagesTrouve >p::first-letter{
+    margin: 10px 0px;
+    text-transform: capitalize;
+    
+}
+
+
+#gameOver{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.603);
+    backdrop-filter: blur(10px);
+    z-index: 50;
+    flex-direction: column;
+}
+#gameOver > h2{
+    font-size: 64px;
+    font-family: 'Gotham';
+    color: white;
+}
+#gameOver > a{
+    font-size: 40px;
+    text-decoration: underline 1px;
+    color: var(--mainRose);
+    cursor: pointer;
+    font-family: 'Gotham';
+}
+
+#win{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    font-family: 'Gotham';
+    background-color: rgba(0, 0, 0, 0.219);
+    backdrop-filter: blur(10px);
+    z-index: 555;
+}
+
 @keyframes vibration {
     
     100%{
@@ -347,3 +440,10 @@ footer{
       }
 }
 
+
+@media screen and (max-width: 1024px) {
+    section, footer, div{
+    
+        display: none;
+    }    
+}

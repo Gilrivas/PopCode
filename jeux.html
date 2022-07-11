@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
-<body class="dragscroll">
+<body id="body">
     <div id="loadingScreen">
         <img class='pan'src="assets/img/panW.png" alt="">
         <h1>COOKING YOUR GAME</h1>
@@ -22,13 +22,21 @@
     </div>
 
     
+    
     <section id="game" class="none">
+
+
+        <div id="modal" class="none">
+            <i class="fa-solid fa-xmark" id="closeModal"></i>
+            <div id="langagesTrouve">
+            </div>
+        </div>
 
         <input id="input" class= 'input opacity' type="text" maxlength="12">
 
 
         <div class="score">
-            <div class="scoreNum"><p id="score">00 </p><p>/ 28</p></div>
+            <div class="scoreNum"><p id="score">00 </p><p>/ 27</p></div>
             <div id="equis">
                 <div class="x" id="x1">
                     <i class="fa-solid fa-x"></i>
@@ -44,31 +52,41 @@
         <div class="minilogo"></div>
 
       
-        <img id="zoom" src="assets/img/chambe.svg" alt="">
+        <img id="zoom" src="assets/img/chambe2.jpg" alt="">
       
-     
-    </section>
+        <div id="win" class="none">
+            <h2>CONGRATS U FOUND THE 27 ITEMS</h2>
+            <h2>TU ES FORT BB</h2>
+            <a href="index.html">CLICK TO GO HOME</a>
+        </div>
+        <div id="gameOver" class="none">
+            <h2>GAME OVER</h2>
+            <a onclick="window.location.href=window.location.href">PLAY AGAIN</a>
+        </div>
 
-    <footer>
         <div class="rightFooter">
             <div class="zooming">
                 <h2>zoom</h2>
                 <div class="zoomline">
-                    <p id="plus">+</p>
+                    <p id="plus" onclick="zoomin()">+</p>
                     <div class="line"></div>
-                    <p id="moin">-</p>
+                    <p id="moin" onclick="zoomout()">-</p>
                 </div>
             </div>
-            <div class="langagesT">
-                <img src="assets/img/loupe.svg" alt="">
-                <h2>Langages Trouvés</h2>
-            </div>
         </div>
-        <div class="footerLinks">
-            <a href="mentionlegales.html">Mentions légales</a>
-            <a href="politique.html">Politique de confidentialité</a>
+
+        <div class="langagesT" id="buttonTrouve">
+            <img src="assets/img/loupe.svg" alt="">
+            <h2>Langages Trouvés</h2>
         </div>
-    </footer>
+
+    </section>
+
+    <div class="footerLinks">
+        <a href="mentionlegales.html">Mentions légales</a>
+        <a href="politique.html">Politique de confidentialité</a>
+    </div>
+    
 
    <script src="assets/js/main.js"></script>
     <script src="assets/js/wheelzoom.js"></script>
