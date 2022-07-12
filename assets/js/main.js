@@ -57,16 +57,15 @@ input.addEventListener("keydown", function(event){
         
         if(langages.includes(modified)){
             
-            goodAnswers.push(res)
-            langagesTrouve.innerHTML += '<p>' + goodAnswers.slice(-1) + '</p>'
-          
-            
+            goodAnswers.push(modified)
+            /* langagesTrouve.innerHTML += '<p>' + goodAnswers.slice(-1) + '</p>' */
+            createElement(goodAnswers)
             let lowerCaseAnswer = goodAnswers.map(name => name.toLowerCase())
-          
             langages = langages.filter((val) => !lowerCaseAnswer.includes(val));
 
     
         }else  if(goodAnswers.includes(modified)){
+            
             alert('tu fais quoi bb')
         }else{
             badAnwers.push(res)
@@ -91,7 +90,40 @@ input.addEventListener("keydown", function(event){
             score.innerHTML = goodAnswers.length
         }
     }
+    
+    function createElement(element){
+        element = document.createElement('p')
+        element.textContent = goodAnswers.slice(-1)
+        element.classList.add('allLangues')
+        langagesTrouve.appendChild(element)
+        let obj = [
+            javascript = 'javascript',
+            javascriptDes = 'coucoucou'
+        ]
+
+        console.log(obj.javascript);
+
+        for (let i = 0; i < goodAnswers.length; i++) {
+            let p = document.querySelectorAll('.allLangues')
+            p[i].addEventListener('click', () => {
+               
+                if(p[i].textContent === obj.javascript){
+                    this.classList.add('red')
+                    console.log(p[i]);
+                }
+            })
+           
+            
+        }
+    }
 })
+
+
+
+
+
+
+
 
 
 let buttonTrouve = document.getElementById('buttonTrouve')

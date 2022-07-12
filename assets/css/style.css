@@ -365,7 +365,9 @@ h1{
     text-transform: capitalize;
     
 }
-
+.red{
+    color: red;
+}
 
 #gameOver{
     width: 100%;
