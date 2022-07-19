@@ -9,7 +9,27 @@ let langages = [
     'c#',
     'php',
     'c++',
-    'typescript',]
+    'typescript',
+    'c',
+    'ruby',
+    'go',
+    'assembly',
+    'swift',
+    'kotilin',
+    'r',
+    'vba',
+    'objective-c',
+    'scaka',
+    'rust',
+    'dart',
+    'elirir',
+    'clojure',
+    'webassembly',
+    'bash',
+    'shell',
+    'powershell']
+
+
 window.addEventListener('keydown', function(event){
     key = event.key 
     if(key === event.key){
@@ -24,18 +44,15 @@ input.addEventListener("keyup", function(event){
        
     }
 })
-
 input.addEventListener("keyup", function(event){
     if(event.key === "Escape"){
         input.classList.add('opacity')
         input.value = '' 
     }   
 })
-
 /* XXX */
 let badAnwers = []
 let x = document.querySelectorAll('.x')
-
 /* find answers */
 let score = document.getElementById('score')
 let goodAnswers = []
@@ -43,38 +60,117 @@ let langagesTrouve = document.getElementById('langagesTrouve')
 let gameOver = document.getElementById('gameOver')
 let win = document.getElementById('win')
 let lowerCaseAnswer = goodAnswers.map(name => name.toLowerCase())
+let buttonTrouve = document.getElementById('buttonTrouve')
+let modal = document.getElementById('modal')
+let closeModal = document.getElementById('closeModal')
+const langueLink = 'assets/js/languages.json'
+
+buttonTrouve.addEventListener('click', ()=>{
+    modal.classList.remove('none')
+})
+closeModal.addEventListener('click', ()=> {
+    modal.classList.add('none')
+})
 
 
-input.addEventListener("keydown", function(event){
+async function openFirstModal(element){
+    let modalLangue = document.getElementById('modalLangue')
+    let modalTitle = document.getElementById('modalTitle')
+    let modalDesc = document.getElementById('modalDesc')
+    let modalImg = document.getElementById('imgModal')
+    const response = await fetch(langueLink);
+    if (response.ok) {
+        const data = await response.json();
+        var names = data.languages.langage
+
+        for (let i = 0; i < names.length; i++) {
+            if(names[i].name === element){
+                modalImg.src = names[i].picture
+                modalLangue.classList.remove('none')
+                modalTitle.textContent = names[i].name
+                modalDesc.textContent = names[i].description
+                
+            }
+            
+        }
+    }
+}
+
+
+function inputAndCheck(){
     let res = input.value
     let string = res,
     regex = /\b[A-z]{1,}\b/g;
     let modified = string.replace(regex, function(match) {
         return match.toLowerCase();
     });
-
-    if(event.key === "Enter"){  
-        
-        if(langages.includes(modified)){
-            
-            goodAnswers.push(modified)
-            /* langagesTrouve.innerHTML += '<p>' + goodAnswers.slice(-1) + '</p>' */
-            createElement(goodAnswers)
-            let lowerCaseAnswer = goodAnswers.map(name => name.toLowerCase())
-            langages = langages.filter((val) => !lowerCaseAnswer.includes(val));
-
     
-        }else  if(goodAnswers.includes(modified)){
+    if(langages.includes(modified)){
             
-            alert('tu fais quoi bb')
-        }else{
-            badAnwers.push(res)
-            for(let i = 0; i < badAnwers.length; i++){
-                x[i].style = 'color: var(--mainBlue);'         
-            }     
-        }
-    }   
+        goodAnswers.push(modified)
+        /* langagesTrouve.innerHTML += '<p>' + goodAnswers.slice(-1) + '</p>' */
+        createElement(goodAnswers)
+        let lowerCaseAnswer = goodAnswers.map(name => name.toLowerCase())
+        langages = langages.filter((val) => !lowerCaseAnswer.includes(val));
 
+        openFirstModal(modified)
+
+        
+
+
+    }else  if(goodAnswers.includes(modified)){
+        
+        alert('tu fais quoi bb')
+    }else{
+        badAnwers.push(res)
+        for(let i = 0; i < badAnwers.length; i++){
+            x[i].style = 'color: var(--mainBlue);'         
+        }     
+    }
+}
+
+async function createElement(element){
+    element = document.createElement('p')
+    element.textContent = goodAnswers.slice(-1)
+    element.classList.add('allLangues')
+    langagesTrouve.appendChild(element)
+    let namesLangue = document.querySelectorAll('.allLangues')
+    let modalLangue = document.getElementById('modalLangue')
+    let modalTitle = document.getElementById('modalTitle')
+    let modalDesc = document.getElementById('modalDesc')
+    let modalImg = document.getElementById('imgModal')
+   
+
+    const response = await fetch(langueLink);
+    if (response.ok) {
+        const data = await response.json();
+        var names = data.languages.langage
+        
+        function proNames(){
+            for (let i = 0; i < namesLangue.length; i++) {
+                namesLangue[i].addEventListener('click', ()=>{
+                    for (let o = 0; o < names.length; o++) {
+                        if(namesLangue[i].textContent == names[o].name){
+                            modalImg.src = names[o].picture
+                            modalLangue.classList.remove('none')
+                            modalTitle.textContent = names[o].name
+                            modalDesc.textContent = names[o].description
+                            modal.classList.add('none')
+                        }
+                    }
+                }) 
+            }
+        }
+
+        let closeModalLangue = document.getElementById('closeModalLangue')
+        closeModalLangue.addEventListener('click', ()=>{
+            modalLangue.classList.add('none')
+        })
+        proNames()
+    }
+}
+
+function winOrLose(){
     if(badAnwers.length == 3){
         gameOver.classList.remove('none')
         input.classList.add("none")   
@@ -90,32 +186,16 @@ input.addEventListener("keydown", function(event){
             score.innerHTML = goodAnswers.length
         }
     }
-    
-    function createElement(element){
-        element = document.createElement('p')
-        element.textContent = goodAnswers.slice(-1)
-        element.classList.add('allLangues')
-        langagesTrouve.appendChild(element)
-        let obj = [
-            javascript = 'javascript',
-            javascriptDes = 'coucoucou'
-        ]
+}
 
-        console.log(obj.javascript);
+input.addEventListener("keydown", function(event){   
 
-        for (let i = 0; i < goodAnswers.length; i++) {
-            let p = document.querySelectorAll('.allLangues')
-            p[i].addEventListener('click', () => {
-               
-                if(p[i].textContent === obj.javascript){
-                    this.classList.add('red')
-                    console.log(p[i]);
-                }
-            })
-           
-            
-        }
-    }
+    if(event.key === "Enter"){  
+        inputAndCheck()     
+    }   
+
+    winOrLose()
+
 })
 
 
@@ -123,18 +203,6 @@ input.addEventListener("keydown", function(event){
 
 
 
-
-
-
-let buttonTrouve = document.getElementById('buttonTrouve')
-let modal = document.getElementById('modal')
-let closeModal = document.getElementById('closeModal')
-buttonTrouve.addEventListener('click', ()=>{
-    modal.classList.remove('none')
-})
-closeModal.addEventListener('click', ()=> {
-    modal.classList.add('none')
-})
 
 
 

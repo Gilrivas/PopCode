@@ -32,7 +32,22 @@
             </div>
         </div>
 
-        <input id="input" class= 'input opacity' type="text" maxlength="12">
+        <div id="modalLangue" class="none">
+            <i class="fa-solid fa-xmark" id="closeModalLangue"></i>
+            <h2 id="modalTitle"></h2>
+            <div class="modalContent">
+                <img id="imgModal" src="assets/img/logos/">
+                
+                <p id="modalDesc"></p>
+            </div>
+            <div class="fermer">
+                <i class="fa-solid fa-square"></i>
+                <i class="fa-solid fa-square-check none"></i>
+                <p>FERMER AUTOMATIQUEMENT CETTE FENETRE</p>
+            </div>
+        </div>
+        
+        <input id="input" class= 'input opacity' type="text|button" maxlength="12">
 
 
         <div class="score">
@@ -52,7 +67,9 @@
         <div class="minilogo"></div>
 
       
-        <img id="zoom" src="assets/img/chambe2.jpg" alt="">
+        <div class="zoom" >
+            <img id="zoom" src="assets/img/chambe2.jpg" alt="">
+        </div>
       
         <div id="win" class="none">
             <h2>CONGRATS U FOUND THE 27 ITEMS</h2>
@@ -61,16 +78,16 @@
         </div>
         <div id="gameOver" class="none">
             <h2>GAME OVER</h2>
-            <a onclick="window.location.href=window.location.href">PLAY AGAIN</a>
+            <a href="index.html">PLAY AGAIN</a>
         </div>
 
         <div class="rightFooter">
             <div class="zooming">
                 <h2>zoom</h2>
                 <div class="zoomline">
-                    <p id="plus" onclick="zoomin()">+</p>
+                    <p id="plus">+</p>
                     <div class="line"></div>
-                    <p id="moin" onclick="zoomout()">-</p>
+                    <p id="moin">-</p>
                 </div>
             </div>
         </div>

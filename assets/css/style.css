@@ -158,6 +158,7 @@ h1{
     background-repeat: no-repeat;
     position: fixed;
     right: 0;
+    z-index: 1;
     top: 20px;
 }
 #game{
@@ -169,6 +170,7 @@ h1{
     color: white;
     font-family: 'Gotham';
     left:50px;
+    z-index: 1;
     top: 25px;
 }
 
@@ -300,7 +302,7 @@ h1{
 
 .opacity{
     opacity: 0% ;
-    z-index: -1;
+    z-index: -1 !important;
 }
 .input{
     position: fixed;
@@ -310,7 +312,7 @@ h1{
     font-family: 'GothamLight';
     font-size: 60px;
     border: none;
-
+    z-index: 1;
     text-align: center;
     color: white;
    cursor: default;
@@ -353,7 +355,7 @@ h1{
     cursor: pointer;
     user-select: none;
 }
-#langagesTrouve > p{
+.allLangues{
     margin: 30px 0px;
     text-transform: lowercase;
     cursor: pointer;
@@ -366,7 +368,7 @@ h1{
     
 }
 .red{
-    color: red;
+    color: purple;
 }
 
 #gameOver{
@@ -410,6 +412,52 @@ h1{
     background-color: rgba(0, 0, 0, 0.219);
     backdrop-filter: blur(10px);
     z-index: 555;
+}
+
+#modalLangue{
+    width: 80%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.671);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    font-family: "Gotham";
+}
+
+.modalContent{
+    display: flex;
+    align-items: center;
+    
+}
+
+#modalTitle{
+    color: white;
+    font-size: 70px;
+    text-transform: uppercase;
+    margin: 30px 35px;
+}
+
+#modalDesc{
+    width: 50%;
+    color: white;
+    font-size: 14px;
+    margin-left: 50px;
+    line-height: 20px;
+}
+
+
+#closeModalLangue{
+    font-size: 40px;
+    
+    
+    cursor: pointer;
+    color: var(--mainRose);
+    position: absolute;
+    top: 25px;
+    right: 25px;
 }
 
 @keyframes vibration {
