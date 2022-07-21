@@ -15,24 +15,24 @@ let langages = [
     'go',
     'assembly',
     'swift',
-    'kotilin',
+    'kotlin',
     'r',
     'vba',
     'objective-c',
-    'scaka',
+    'scala',
     'rust',
     'dart',
     'elirir',
     'clojure',
     'webassembly',
     'bash',
-    'shell',
+    'elixir',
     'powershell']
 
 
 window.addEventListener('keydown', function(event){
     key = event.key 
-    if(key === event.key){
+    if(key){
         input.focus()
         input.classList.remove('opacity')
     }
@@ -64,13 +64,46 @@ let buttonTrouve = document.getElementById('buttonTrouve')
 let modal = document.getElementById('modal')
 let closeModal = document.getElementById('closeModal')
 const langueLink = 'assets/js/languages.json'
+let checkEp = document.getElementById('checkEp')
+let checked = document.getElementById('checked')
+let fermer = document.getElementById('fermer')
+let closeFooter = document.getElementById('closeModalFooter')
+let modalFooter = document.getElementById('modalFooter')
+let legales = document.getElementById('legales')
 
+legales.addEventListener('click', ()=>{
+    modalFooter.classList.remove('none')
+})
+
+closeFooter.addEventListener('click', () =>{
+    modalFooter.classList.add('none')
+})
 buttonTrouve.addEventListener('click', ()=>{
     modal.classList.remove('none')
 })
 closeModal.addEventListener('click', ()=> {
     modal.classList.add('none')
 })
+
+function check(){
+    if(checkEp.classList.contains('none')){
+        setTimeout(() =>{modalLangue.classList.add('none')},2000)
+
+       }   
+}
+checkEp.addEventListener('click', () => {
+    checkEp.classList.add('none')
+    checked.classList.remove('none')
+    
+    check()
+})
+checked.addEventListener('click', () => {
+    checkEp.classList.remove('none')
+    checked.classList.add('none')
+})
+
+
+
 
 
 async function openFirstModal(element){
@@ -83,16 +116,19 @@ async function openFirstModal(element){
         const data = await response.json();
         var names = data.languages.langage
 
+
         for (let i = 0; i < names.length; i++) {
             if(names[i].name === element){
                 modalImg.src = names[i].picture
                 modalLangue.classList.remove('none')
                 modalTitle.textContent = names[i].name
                 modalDesc.textContent = names[i].description
-                
+                fermer.classList.remove('none')
             }
-            
+
+           
         }
+        check()
     }
 }
 
@@ -152,6 +188,7 @@ async function createElement(element){
                     for (let o = 0; o < names.length; o++) {
                         if(namesLangue[i].textContent == names[o].name){
                             modalImg.src = names[o].picture
+                            fermer.classList.add('none')
                             modalLangue.classList.remove('none')
                             modalTitle.textContent = names[o].name
                             modalDesc.textContent = names[o].description
@@ -162,13 +199,17 @@ async function createElement(element){
             }
         }
 
+       
         let closeModalLangue = document.getElementById('closeModalLangue')
         closeModalLangue.addEventListener('click', ()=>{
             modalLangue.classList.add('none')
         })
         proNames()
+        
     }
 }
+
+
 
 function winOrLose(){
     if(badAnwers.length == 3){

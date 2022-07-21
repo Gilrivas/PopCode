@@ -83,37 +83,37 @@
         {
           "name": "go",
           "description": "Go est un langage de programmation compilé et concurrent inspiré de C et Pascal. Ce langage a été développé par Google à partir d’un concept initial de Robert Griesemer (en), Rob Pike et Ken Thompson. Go possède deux implémentations : la première utilise gc, le compilateur Go ; la seconde utilise gccgo, « frontend » GCC écrit en C++. Go est écrit en C en utilisant yacc et GNU Bison pour l’analyse syntaxique jusqu’à la version 1.4, et en Go lui-même pour les versions suivantes (1.5).Logo de Google GoMascotte de Google Go.Un objectif de Go est donné par Rob Pike, l’un de ses trois créateurs, qui dit à propos des développeurs inexpérimentés : « Ils ne sont pas capables de comprendre un langage brillant, mais nous voulons les amener à réaliser de bons programmes. Ainsi, le langage que nous leur donnons doit être facile à comprendre et facile à adopter »Go veut faciliter et accélérer la programmation à grande échelle : en raison de sa simplicité, il est donc concevable de l’utiliser aussi bien pour écrire des applications, des scripts ou de grands systèmes. Cette simplicité est nécessaire aussi pour assurer la maintenance et l’évolution des programmes sur plusieurs générations de développeurs.S’il vise aussi la rapidité d’exécution, indispensable à la programmation système, il considère le multithreading comme le moyen le plus robuste d’assurer sur les processeurs actuels cette rapidité tout en rendant la maintenance facile par séparation de tâches simples exécutées indépendamment afin d’éviter de créer des « usines à gaz ». Cette conception permet également le fonctionnement sans réécriture sur des architectures multi-cœurs en exploitant immédiatement l’augmentation de puissance correspondante.", 
-          "picture" : ".assets/img/logos/go.png"
+          "picture" : "assets/img/logos/go.png"
          
         },
         {
           "name": "assembly",
           "description": "En programmation informatique , le langage d'assemblage (ou langage assembleur , ou code machine symbolique), est tout langage de programmation de bas niveau avec une très forte correspondance entre les instructions du langage et l' architecture. instructions du code machine . Le langage d'assemblage a généralement une déclaration par instruction machine (1: 1), mais les constantes, les commentaires , les directives d' assembleur , les étiquettes symboliques de, par exemple,les emplacements de mémoire , les registres et les macros sont généralement également pris en charge.", 
-          "picture" : ".assets/img/logos/assembly.png"
+          "picture" : "assets/img/logos/assembly.png"
          
         },
         {
           "name": "swift",
           "description": "Swift (langage d'Apple) est un langage de programmation objet compilé, multi-paradigmes, qui se veut simple, performant et sûr. Il est développé en open source.Le projet de développement de Swift est géré par Apple, qui en est également le principal contributeur ; mais de nombreux membres de la communauté Swift, ainsi que d'autres acteurs, tels que Google et IBM, participent également à son développement. Swift est officiellement supporté sur les systèmes d'exploitation Ubuntu, iOS, macOS, watchOS et tvOS. Un support non officiel (géré par la communauté) existe pour d'autres plateformes Linux, telles que Debian et Fedora.Un manuel officiel en anglais est disponible en ligne.Swift dispose d'une interopérabilité avec le langage C ainsi qu'avec l'Objective-C sur les plateformes d'Apple.Le compilateur de Swift utilise LLVM pour la génération du code machine.", 
-          "picture" : ".assets/img/logos/swift.png"
+          "picture" : "assets/img/logos/swift.png"
          
         },
         {
           "name": "kotlin",
           "description": "Kotlin est un langage de programmation orienté objet et fonctionnel, avec un typage statique qui permet de compiler pour la machine virtuelle Java, JavaScript, et vers plusieurs plateformes en natif (grâce à LLVM). Son développement provient principalement d'une équipe de programmeurs chez JetBrains basée à Saint-Pétersbourg en Russie (son nom vient de l'île de Kotline, près de St. Pétersbourg).Google annonce pendant la conférence Google I/O 2017 que Kotlin devient le second langage de programmation officiellement pris en charge par Android après Java. Le 8 mai 2019, toujours lors de la conférence Google I/O, Kotlin devient officiellement le langage de programmation voulu et recommandé par le géant américain Google pour le développement des applications Android.Pivotal Software annonce le 4 janvier 2017 le support officiel de Kotlin sur la cinquième version du Framework Spring.", 
-          "picture" : ".assets/img/logos/kotlin.png"
+          "picture" : "assets/img/logos/kotlin.png"
          
         },
         {
           "name": "r",
           "description": "R est un langage de programmation et un logiciel libre destiné aux statistiques et à la science des données soutenu par la R Foundation for Statistical Computing. Il fait partie de la liste des paquets GNU et est écrit en C, Fortran et R.GNU R est un logiciel libre distribué selon les termes de la licence GNU GPL. Le site officiel fournit des binaires pour Linux, Windows et macOS, et des portages existent pour d'autres systèmes d'exploitation.Le langage R est largement utilisé par les statisticiens, les data miners, data scientists pour le développement de logiciels statistiques et l'analyse des données.En janvier 2022, R est classé 12e dans l'index TIOBE qui mesure la popularité des langages de programmation.", 
-          "picture" : ".assets/img/logos/r.png"
+          "picture" : "assets/img/logos/r.png"
          
         },
         {
           "name": "vba",
           "description": "Visual Basic for Applications (VBA) est une implémentation de Microsoft Visual Basic qui est intégrée dans toutes les applications de Microsoft Office, dans quelques autres applications Microsoft comme Visio et au moins partiellement dans quelques autres applications comme AutoCAD, WordPerfect, MicroStation, Solidworks ou encore ArcGIS. Il remplace et étend les capacités des langages macro spécifiques aux plus anciennes applications comme le langage WordBasic intégré à une ancienne version du logiciel Word, et peut être utilisé pour contrôler la quasi-totalité de l'IHM des applications hôtes, ce qui inclut la possibilité de manipuler les fonctionnalités de l'interface utilisateur comme les menus, et de personnaliser les boîtes de dialogue et les formulaires utilisateurs.Comme son nom l'indique, VBA est très lié à Visual Basic (les syntaxes et concepts des deux langages se ressemblent), mais ne peut normalement qu'exécuter du code dans une application hôte Microsoft Office (et non pas d'une application autonome, il requiert donc une licence de la suite bureautique Microsoft). Il peut cependant être utilisé pour contrôler une application à partir d'une autre (par exemple, créer automatiquement un document Word à partir de données Excel). Le code ainsi exécuté est stocké dans des instances de documents, on l'appelle également macro.VBA est fonctionnellement riche et extrêmement flexible, mais il possède d'importantes limitations, comme son support limité des fonctions de rappel (callbacks), ainsi qu'une gestion des erreurs archaïque, utilisation de handlers d'erreurs en lieu et place d'un mécanisme d'exceptions.Même si ces limitations rendent ce langage très peu utilisé par les développeurs informaticiens soucieux d'utiliser des outils avant tout performants, sa simplicité et sa facilité d'accès ont séduit certaines professions, notamment dans la finance.", 
-          "picture" : ".assets/img/logos/vba.png"
+          "picture" : "assets/img/logos/vba.png"
          
         },
         {
