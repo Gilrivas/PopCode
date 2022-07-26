@@ -45,6 +45,20 @@ body{
     z-index: 5555;
 }
 
+.notFound{
+    width: 100%;
+    top: 0;
+    height: 100vh;
+    position: fixed;
+    display: none;
+}
+.notFoundMob{
+    width: 100%;
+    top: 0;
+    height: 100vh;
+    position: fixed;
+    display: none;
+}
 
 span{
     animation: vibration 0.5s linear infinite;
@@ -117,6 +131,9 @@ h1{
     flex-direction: column;
     align-items: center;
     background-image: url(../img/fond.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
 }
 
 .popBox{
@@ -260,6 +277,14 @@ h1{
     height: 200px;
     background-color: white;
     width: 2px;
+    position: relative;
+}
+.barZoom{
+    height: 0px;
+    background-color: var(--mainBlue);
+    width: 2px;
+    position: absolute;
+    bottom: 0;
 }
 .langagesT{
     display: flex;
@@ -267,15 +292,15 @@ h1{
     justify-content: center;
     padding: 20px;
     height: 5px;
-    margin: 0px 0px 20px 30px;
+    
     font-family: 'GothamLight';
     font-size: 8px;
     letter-spacing: 4px;
     text-transform: uppercase;
     position: fixed;
     color: white;
-    bottom: 20px;
-    left: 60px;
+    bottom: 30px;
+    left: 30px;
     border: 1px solid white;
     cursor: pointer;
     user-select: none;
@@ -302,18 +327,17 @@ h1{
 
 .footerLinks{
     position: fixed;
-    right: 0;
-    bottom: 0;
+    right: 60px;
+    bottom: 30px;
     display: flex;
     align-items: flex-end;
     justify-content: end;
-    margin:40px;
+   
 }
 .footerLinks > div{
     color: white;
     font-family: 'Gotham', sans-serif;
     text-decoration: none;
-    margin: 10px;
     text-decoration: underline;
     text-underline-offset: 5px;
     cursor: pointer;
@@ -595,6 +619,19 @@ h1{
     margin: 0;
 }
 
+#found{
+    position: fixed;
+    top: calc(50% - 150px);
+    left: calc(50% - 360px);
+}
+#found >p{
+    font-size: 100px;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Gotham';
+    
+}
+
 #win > a{
     color: var(--mainRose);
     font-size: 30px;
@@ -678,9 +715,27 @@ h1{
 }
 
 @media screen and (max-width: 1024px) {
-    section, footer, div{
     
-        display: none;
-    }    
+    .footerLinks{
+        display: flex !important;
+        z-index: 51;
+    }
+    
+    
+.notFound{
+    display: block;
+    z-index: 50;
 }
+}
+@media screen and (max-width: 600px) {
+    .notFound{
+        display: none;
+    }
+    .notFoundMob{
+       z-index: 50;
+        display: block;
+    }
+}
+
+
 

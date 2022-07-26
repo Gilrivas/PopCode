@@ -7,8 +7,11 @@
     <title>PopCode</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="shortcut icon" href="assets/img/minilogo.svg" type="image/x-icon">
 </head>
 <body id="body">
+    <img src="assets/img/error404.png" alt="" class="notFound">
+    <img src="assets/img/errorMobile.png" alt="" class="notFoundMob">
     <div id="loadingScreen">
         <img class='pan'src="assets/img/panW.png" alt="">
         <h1>COOKING YOUR GAME</h1>
@@ -86,23 +89,26 @@
             <a href="index.html">CLIQUEZ ICI POUR REJOUER</a>
         </div>
 
-        <div class="rightFooter">
+        <!-- <div class="rightFooter">
             <div class="zooming">
                 <h2>zoom</h2>
                 <div class="zoomline">
                     <p id="plus">+</p>
-                    <div class="line"></div>
+                    <div class="line"><div class="barZoom"></div></div>
+                    
                     <p id="moin">-</p>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="langagesT" id="buttonTrouve">
             <img src="assets/img/loupe.svg" alt="">
             <h2>Langages Trouvés</h2>
         </div>
 
-    
+    <div id="found" class="none">
+        <p>Déjà trouvé</p>
+    </div>
 
     <div class="footerLinks">
         <div id="legales">Mentions légales</div>

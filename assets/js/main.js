@@ -22,7 +22,7 @@ let langages = [
     'scala',
     'rust',
     'dart',
-    'elirir',
+    'elixir',
     'clojure',
     'webassembly',
     'bash',
@@ -70,6 +70,7 @@ let fermer = document.getElementById('fermer')
 let closeFooter = document.getElementById('closeModalFooter')
 let modalFooter = document.getElementById('modalFooter')
 let legales = document.getElementById('legales')
+let found = document.getElementById('found')
 
 legales.addEventListener('click', ()=>{
     modalFooter.classList.remove('none')
@@ -155,8 +156,10 @@ function inputAndCheck(){
 
 
     }else  if(goodAnswers.includes(modified)){
-        
-        alert('tu fais quoi bb')
+            found.classList.remove('none')
+            setTimeout(()=>{
+                found.classList.add('none')
+            }, 400)
     }else{
         badAnwers.push(res)
         for(let i = 0; i < badAnwers.length; i++){
@@ -238,9 +241,6 @@ input.addEventListener("keydown", function(event){
     winOrLose()
 
 })
-
-
-
 
 
 
