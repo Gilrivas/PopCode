@@ -1,16 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@font-face {
+    font-family: Gotham;
+    src: url(../fonts/GothamMedium.otf);
+}
+@font-face {
+    font-family: GothamLight;
+    src: url(../fonts/GothamLight.otf);
+}
+@font-face {
+    font-family: GothamBold;
+    src: url(../fonts/GothamBold.otf);
+}
+
+:root{
+    --mainRose: #FFAAFF;
+    --mainBlue: #0AEFF7;
+}
 
 body{
     background: black;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+}
+#game{
+    animation-name: animate-pop;
+  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+  animation-duration: 0.5s;
+  animation-delay: 0.2s;
+   
 }
 *{
     box-sizing: border-box;
 }
-html {
-    -webkit-font-smoothing: antialiased;
-}
+
 .none{
     display: none !important;
 }
@@ -20,17 +42,36 @@ html {
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
+    z-index: 5555;
+}
+
+.notFound{
+    width: 100%;
+    top: 0;
+    height: 100vh;
+    position: fixed;
+    display: none;
+}
+.notFoundMob{
+    width: 100%;
+    top: 0;
+    height: 100vh;
+    position: fixed;
+    display: none;
+}
+
+span{
+    animation: vibration 0.5s linear infinite;
 }
 
 h1{
     color: white;
     padding: 0;
     margin: 0;
-    animation: title 0.7s alternate infinite;
+    animation: title 0.8s alternate infinite;
     position: absolute;
     bottom: 40%;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
+    font-family: 'GothamBold', sans-serif;
 }
 .pan{
     width: 300px;
@@ -45,11 +86,13 @@ h1{
     font-size: 15px;
     color: white;
     animation: jump .5s alternate infinite;
+        
 }
 
 .fa-js{
     left: 46.3%;
     animation-delay: .7s;
+   
 }
 .fa-php{
   
@@ -85,62 +128,614 @@ h1{
     min-height: 100vh;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
+    background-image: url(../img/fond.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
 }
 
-.circle{
-    width: 250px;
-    height: 250px;
-    background: white;
-    border-radius: 100%;
-    animation: scale 0.5s linear ;
+.popBox{
+    user-select: none;
+    width: 26%;
+    transition: 0.5s;
+    animation: blur 1s alternate;
+   
+    
+}
+#titleEfect{
+    animation: shine 3s linear infinite;
+    font-family: "Gotham" ,sans-serif;
+    color: var(--mainRose);
+    letter-spacing: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    -webkit-mask-size: 200%;
+    mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    mask-size: 200%;
+}
+
+.reference{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.reference > h2{
+    color: var(--mainBlue);
+    font-size: 120px;
+    margin: 0;
+    font-family: 'Gotham', sans-serif;
+}
+
+.reference > p{
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 40px;
+    font-family: 'Gotham', sans-serif;
+}
+#clickIci{
+    z-index: 20;
+}
+
+
+.minilogo{
+    background-image: url(../img/minilogo.svg);
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    position: fixed;
+    right: 0;
+    z-index: 1;
+    top: 20px;
+}
+#game{
+    min-height: 100vh;
+}
+
+.score{
+    position: fixed;
+    color: white;
+    font-family: 'Gotham';
+    left:50px;
+    z-index: 1;
+    top: 25px;
+}
+
+.scoreNum{
+    display: flex;
+}
+
+.score::before{
+    position: absolute;
+    content: 'SCORE';
+    color: var(--mainBlue);
+    left: -45px;
+    border-bottom: 1px solid white;
+    top: 30px;
+    transform: rotate(270deg);
+}
+
+#zoom{
+   width: 100vw;
+   height: 100vh;
+   user-select: none;
+}
+
+#equis{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.popBox{
-    width: 225px;
-    height: 225px;
+#equis > .x{
+    margin: 0px 3px;
+    
+}
+
+#x-1{
+    color: rgba(255, 255, 255, 0.3)
+}
+
+.rightFooter{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    color: white;
+    display: flex;
+    margin: 20px;
+    align-items: flex-end;
+}
+.zooming{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.zooming > h2{
+    transform: rotate(-90deg);
+    color: var(--mainBlue);
+    font-size: 12px;
+    text-transform: uppercase;
+    user-select: none;
+    font-family: 'GothamLight';
+}
+.zoomline{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.line{
+    height: 200px;
+    background-color: white;
+    width: 2px;
+    position: relative;
+}
+.barZoom{
+    height: 0px;
+    background-color: var(--mainBlue);
+    width: 2px;
+    position: absolute;
+    bottom: 0;
+}
+.langagesT{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 5px;
+    
+    font-family: 'GothamLight';
+    font-size: 8px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    position: fixed;
+    color: white;
+    bottom: 30px;
+    left: 30px;
+    border: 1px solid white;
+    cursor: pointer;
+    user-select: none;
+}
+
+#plus{
+    user-select: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+#moin{
+    user-select: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.color{
+    color: var(--mainBlue);
+}
+
+.langagesT > img{
+    margin: 0px 10px 0px 0px;
+}
+
+.footerLinks{
+    position: fixed;
+    right: 60px;
+    bottom: 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+   
+}
+.footerLinks > div{
+    color: white;
+    font-family: 'Gotham', sans-serif;
+    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    cursor: pointer;
+}
+
+.opacity{
+    opacity: 0% ;
+    z-index: -1 !important;
+}
+.input{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.589);
+    width: 100%;
+    height: 100%;
+    font-family: 'GothamLight';
+    font-size: 60px;
+    border: none;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    cursor: default;
+}
+
+.input:focus{
+    outline: none;
+
+}
+
+
+
+#modal{
+    display: flex;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.473);
+    backdrop-filter: blur(5px);
+    z-index: 55;
+}
+#closeModal{
+    position: absolute;
+    font-size: 40px;
+    top: 15%;
+    color: var(--mainRose);
+    cursor: pointer;
+    right: 10%;
+}
+#langagesTrouve{
+    font-family: 'Gotham';
+    font-size: 60px;
+    color: var(--mainRose);
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    user-select: none;
+}
+.allLangues{
+    margin: 20px 30px;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+    
+}
+
+.red{
+    color: purple;
+}
+
+#gameOver{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.603);
+    backdrop-filter: blur(10px);
+    z-index: 50;
+    flex-direction: column;
+}
+#gameOver > h2{
+    font-size: 100px;
+    font-family: 'Gotham';
+    color: white;
+}
+#gameOver > a{
+    font-size: 40px;
+    text-decoration: underline 1px;
+    color: var(--mainRose);
+    cursor: pointer;
+    font-family: 'Gotham';
+}
+
+#win{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    font-family: 'Gotham';
+    background-color: rgba(0, 0, 0, 0.219);
+    backdrop-filter: blur(10px);
+    z-index: 555;
+}
+
+#modalLangue{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.671);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    font-family: "Gotham";
+}
+
+
+.modalContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    
+}
+
+#modalTitle{
+    color: white;
+    font-size: 120px;
+    position: fixed;
+    top: calc(15% - 60px);
+    margin: 0;
+    left: calc(20% - 12vw);
+    text-transform: uppercase;
+}
+
+#modalDesc{
+    width: 60%;
+    color: white;
+    font-size: 20px;
+    margin-left: 50px;
+    line-height: 25px;
+}
+
+
+#closeModalLangue{
+    font-size: 40px;
+    cursor: pointer;
+    color: var(--mainRose);
+    position: absolute;
+    top: 20%;
+    right: 10%;
+}
+
+.fermer{
+    color: white;
+    display: flex;
+    font-size: 20px;
+    position: fixed;
+    right: 10%;
+    bottom: 20%;
+    align-items: center;
+    justify-content: center;
+}
+#checkEp, #checked{
+    cursor: pointer;
     margin-right: 10px;
+    font-size: 28px;
+    color: var(--mainRose);
+}
+
+#modalFooter{
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color: rgba(0, 0, 0, 0.788);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    height: 100%;
+    z-index: 5555;
+    position: fixed;
+    top: 0;
+    font-family: 'Gotham';
+    backdrop-filter: blur(6px);
+}
+
+
+
+#modalFooter > h2{
+    font-size: 60px;
+    margin: 10px 0px;
+}
+
+#closeModalFooter{
+    color: var(--mainRose);
+    position: absolute;
+    right: 12%;
+    top:8%;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+.modalFooterContent{
+    width: 80%;
+    margin: 20px 0px;
+}
+
+
+.modalFooterContent > p{
+    width: 100%;
+    text-align: left;
+}
+
+.modalFooterContent > p> a{
+   
+    color: var(--mainRose);
+}
+
+.operativeS{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.columm{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+.columm > ul{
+    padding: 0;
+    margin: 0px 20px;
+}
+.columm > ul > li{
+    padding: 0;
+    margin: 10px 0px;
+}
+
+.fire{
+    position: absolute;
+}
+
+.f1{
+    left: 0;
+    top: 0;
+}
+.f2{
+    right: 0;
+    top: 0;
+}
+.f3{
+    left: 0;
+    bottom: 0;
+}
+.f4{
+    right: 0;
+    bottom: 0;
+}
+
+.bravo{
+    font-size: 140px;
+    margin: 0;
+}
+
+#found{
+    position: fixed;
+    top: calc(50% - 150px);
+    left: calc(50% - 360px);
+}
+#found >p{
+    font-size: 100px;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Gotham';
+    
+}
+
+#win > a{
+    color: var(--mainRose);
+    font-size: 30px;
+    text-underline-offset: 5px;
+    
 }
 
 
 @keyframes vibration {
-    
     100%{
         transform: translateX(7px);
     }
 }
 
 @keyframes jump {
-
-   
     100%{
         transform: translateY(-40px);
-        
-       
     }
-
 }
 
 @keyframes scale {
     0%{
-        transform: scale(0%);
-    }
-    
-    50%{
-        transform: scale(50%);
-    }
-
-    100%{
-        transform: scale(100%);
+        transform: scale(60%);
+        border-radius: 100%;
     }
 }
 
 @keyframes title {
-    100%{
+    100% {
         color: black;
+      }
+}
+@keyframes shine {
+    from { -webkit-mask-position: 150%; }
+    to { -webkit-mask-position: -50%; }
+  }
+
+
+@keyframes blur {
+    0%{
+        filter: blur(8px);
+    }
+
+}
+
+@keyframes animate-pop {
+    0% {
+        opacity: 0;
+        filter: blur(5px);
+        transform: scale(0.5, 0.5);
+    }
+  
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+  }
+
+@media screen and (max-width: 1600px) {   
+    #modalTitle{
+        left: calc(20% - 14vw);
+    }
+
+    #modalDesc{
+        font-size: 16px;
+    }
+
+    .fermer{
+        right: 8%;
+        bottom: 13%;
+    }
+
+    #closeModalLangue{
+        top: 15%;
+        right: 7%;
+    }
+
+    #modalFooter > h2{
+        margin-top: 165px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    
+    .footerLinks{
+        display: flex !important;
+        z-index: 51;
     }
     
+    
+.notFound{
+    display: block;
+    z-index: 50;
 }
+}
+@media screen and (max-width: 600px) {
+    .notFound{
+        display: none;
+    }
+    .notFoundMob{
+       z-index: 50;
+        display: block;
+    }
+}
+
+
+
